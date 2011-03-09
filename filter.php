@@ -1,48 +1,46 @@
-<?php //$Id: filter.php,v 1.4 2008/08/28 23:39:53 stronk7 Exp $
+<?php
 
-///////////////////////////////////////////////////////////////////////////
-//                                                                       //
-// NOTICE OF COPYRIGHT                                                   //
-//                                                                       //
-// Moodle - Modular Object-Oriented Dynamic Learning Environment         //
-//          http://moodle.com                                            //
-//                                                                       //
-// Copyright (C) 2001-3001 Martin Dougiamas        http://dougiamas.com  //
-//           (C) 2001-3001 Eloy Lafuente (stronk7) http://contiento.com  //
-//                                                                       //
-// This program is free software; you can redistribute it and/or modify  //
-// it under the terms of the GNU General Public License as published by  //
-// the Free Software Foundation; either version 2 of the License, or     //
-// (at your option) any later version.                                   //
-//                                                                       //
-// This program is distributed in the hope that it will be useful,       //
-// but WITHOUT ANY WARRANTY; without even the implied warranty of        //
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         //
-// GNU General Public License for more details:                          //
-//                                                                       //
-//          http://www.gnu.org/copyleft/gpl.html                         //
-//                                                                       //
-///////////////////////////////////////////////////////////////////////////
+// This file is part of Moodle - http://moodle.org/
+//
+// Moodle is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Moodle is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-/// This filter allows you to create links to Moodle Docs easily
-/// inside any Moodle text (post, resource...) using one
-/// mediawiki-like syntax.
+/**
+ * This filter allows you to create links to Moodle Docs easily
+ *
+ * Syntax for links is:
+ *     [[docs:pagename|title|language]]
+ * where:
+ *     docs:      acronym of "MoodleDocs", optional, both if
+ *                "docs" or nothing is present, the filter
+ *                will process the link. Used by other
+ *                filters to have a suitable namespace
+ *                for them (like multimovie = "mm")
+ *                Valid prefixes are 2-4 cc lowercase alpha chars
+ *     pagename:  name of the page to link to
+ *     title:     optional text to be linked, if no present
+ *                pagename will be used
+ *     language:  optional language code (en, es, it...) determining
+ *                the target Docs (if no present, "en" will be used)
+ *
+ *
+ * @package    filter
+ * @subpackage moodledocs
+ * @copyright  2001-3001 Eloy Lafuente (stronk7) http://contiento.com
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
 
-/// Syntax for links is:
-///    [[docs:pagename|title|language]]
-/// where:
-///    docs:      acronym of "MoodleDocs", optional, both if
-///               "docs" or nothing is present, the filter
-///               will process the link. Used by other
-///               filters to have a suitable namespace
-///               for them (like multimovie = "mm")
-///               Valid prefixes are 2-4 cc lowercase alpha chars
-///    pagename:  name of the page to link to
-///    title:     optional text to be linked, if no present
-///               pagename will be used
-///    language:  optional language code (en, es, it...) determining
-///               the target Docs (if no present, "en" will be used)
-
+defined('MOODLE_INTERNAL') || die();
 
 function moodledocs_filter($courseid, $text) {
 
@@ -98,4 +96,3 @@ function moodledocs_filter($courseid, $text) {
 /// Finally, return the text
     return $text;
 }
-?>
