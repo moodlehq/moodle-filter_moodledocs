@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Moodle Docs filter language files
+ * Moodle Docs filter version information
  *
  * @package    filter_moodledocs
  * @copyright  2013 onwards Eloy Lafuente (stronk7) {@link http://stronk7.com}
@@ -24,4 +24,8 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$string['filtername'] = 'Moodle docs link filter';
+$plugin->version  = 2013041200;  // Version of the plugin
+$plugin->release  = '2.4.0';
+$plugin->maturity = MATURITY_STABLE;
+$plugin->requires = 2011120500; // Moodle 2.2 release and upwards
+$plugin->component= 'filter_moodledocs';
