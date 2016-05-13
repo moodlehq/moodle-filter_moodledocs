@@ -1,0 +1,3 @@
+MDTCOMPONENT=filter_moodledocs
+MDTRELPATH=filter/moodledocs/
+MDTEXPORT=origin/master
