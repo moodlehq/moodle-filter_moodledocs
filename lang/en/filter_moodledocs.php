@@ -18,6 +18,7 @@
  * Moodle Docs filter language files
  *
  * @package    filter_moodledocs
+ * @category   string
  * @copyright  2013 onwards Eloy Lafuente (stronk7) {@link http://stronk7.com}
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -25,3 +26,5 @@
 defined('MOODLE_INTERNAL') || die();
 
 $string['filtername'] = 'Moodle docs link filter';
+$string['pluginname'] = 'Moodle docs link filter';
+$string['privacy:metadata'] = 'Moodle docs link filter does not store any personal data';
