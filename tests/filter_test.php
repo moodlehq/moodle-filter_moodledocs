@@ -71,7 +71,12 @@ class filter_moodledocs_testcase extends basic_testcase {
             $msg = "Testing text '$text':";
             $result = $filter->filter($text);
 
-            $this->assertRegExp($expected, $result, $msg);
+            // TODO: Remove once out lower PHPUnit version is 9.5.
+            if (!method_exists($this, 'assertMatchesRegularExpression')) {
+                $this->assertRegExp($expected, $result, $msg); // Pre PHPUnit 9.5.
+            } else {
+                $this->assertMatchesRegularExpression($expected, $result, $msg);
+            }
         }
     }
 }
