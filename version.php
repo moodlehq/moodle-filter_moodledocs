@@ -24,8 +24,8 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version = 2018053000;
-$plugin->release = '3.5.0';
+$plugin->version = 2024100100;
+$plugin->release = '4.5';
 $plugin->maturity = MATURITY_STABLE;
-$plugin->requires = 2018042500;
+$plugin->requires = 2024092700.00;
 $plugin->component = 'filter_moodledocs';
