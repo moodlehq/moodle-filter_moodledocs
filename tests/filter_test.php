@@ -26,7 +26,6 @@
 defined('MOODLE_INTERNAL') || die();
 
 global $CFG;
-require_once($CFG->dirroot . '/filter/moodledocs/filter.php'); // Include the code to test
 
 /**
  * Moodle Docs filter testcase
@@ -85,7 +84,7 @@ class filter_moodledocs_testcase extends basic_testcase {
 /**
  * Subclass of filter_moodledocs, for easier testing.
  */
-class testable_filter_moodledocs extends filter_moodledocs {
+class testable_filter_moodledocs extends \filter_moodledocs\text_filter {
 
     public function __construct() {
         $this->context = context_system::instance();
